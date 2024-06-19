@@ -33,44 +33,45 @@ body {
 }
 
 .footerbar {
-  display: flex;
-  justify-content: center;
-  background-color: black;
-  flex-direction: column;
-  align-items: center; /* Centre les éléments horizontalement et verticalement */
-  padding-top: 40px;
-  padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement et verticalement */
+    padding-top: 40px;
+    padding-bottom: 15px;
 
-  img {
+    img {
       max-width: 100%; /* Assure que l'image ne dépasse pas sa taille d'origine */
       height: auto; /* Maintient le ratio hauteur/largeur de l'image */
       /* background-color: white; */ /* Ce commentaire est incorrect, ne s'applique pas à une image */
-  }
+    }
 
-  p {
-      font-family: "Montserrat", sans-serif;
-      color: white;
-      text-align: center; /* Centre le texte horizontalement */
-      margin: 0;
-      padding-top: 30px;
-  }
+    p {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+        text-align: center; /* Centre le texte horizontalement */
+        margin: 0;
+        padding-top: 30px;
+    }
 }
 
 .Navbar {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px 40px;
-  li {
-      display: flex;
-      flex-direction: row;
-  }
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 40px;
 
-  img {
-      
-  }
+    li {
+        display: flex;
+        flex-direction: row;
+    } 
+
+    img {
+
+    }
 }
 
 $gap: 100px;
@@ -98,14 +99,43 @@ $gap: 100px;
 
     p {
         position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 10px; // Ajustez selon vos besoins
-            background-color: rgba(0, 0, 0, 0.7); // Fond semi-transparent pour le texte
-            color: white;
-            font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
-            border-bottom-left-radius: 8px; // Bordure arrondie bas-gauche
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        bottom: 0;
+        left: 0;
+        padding: 10px; // Ajustez selon vos besoins
+        color: white;
+        font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
+        border-bottom-left-radius: 8px; // Bordure arrondie bas-gauche
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
     
 }
 
+.Accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 38px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1000px;
+    }
+
+    h2 {
+        background-color:#FF6060 ;
+        margin: 0;
+        width: 1250px;
+
+    }
+
+    svg {
+        z-index: 1;
+        margin-left: 10px;
+    }
+
+}
