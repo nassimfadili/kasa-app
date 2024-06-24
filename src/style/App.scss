@@ -69,9 +69,6 @@ body {
         flex-direction: row;
     } 
 
-    img {
-
-    }
 }
 
 $gap: 100px;
@@ -139,3 +136,55 @@ $gap: 100px;
     }
 
 }
+
+// Carousel //
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  
+    &-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    &-slide {
+      min-width: 100%;
+      transition: opacity 0.5s ease-in-out;
+  
+      &.active {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+  
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+  
+      &:focus {
+        outline: none;
+      }
+  
+      &:first-of-type {
+        left: 10px;
+      }
+  
+      &:last-of-type {
+        right: 10px;
+      }
+    }
+  }
+  

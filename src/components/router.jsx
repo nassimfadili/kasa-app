@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         element: <Logement/>
     },
     {
-        path:'404',
+        path:'*',
         element: <NotFound/>
     
     },

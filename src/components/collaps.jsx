@@ -1,31 +1,24 @@
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import data from "../datacolaps.json";
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
 
-const Collaps = () => {
-    const [openItems, setOpenItems] = useState([]);
+const Collaps = ({ title, content }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = (i) => {
-        if (openItems.includes(i)) {
-            setOpenItems(openItems.filter(item => item !== i));
-        } else {
-            setOpenItems([...openItems, i]);
-        }
+    const toggle = () => {
+        setIsOpen(!isOpen);
     }
 
     return (
         <div className="Accordion">
-            {data.map((item, index) => (
-                <div key={index}>
-                    <h2>{item.title}</h2>
-                    <FontAwesomeIcon 
-                        icon={openItems.includes(index) ? faChevronDown : faChevronUp} 
-                        onClick={() => toggle(index)} 
-                    />
-                    {openItems.includes(index) && <p>{item.description}</p>}
-                </div>
-            ))}
+            <div>
+                <h2>{title}</h2>
+                <FontAwesomeIcon 
+                    icon={isOpen ? faChevronDown : faChevronUp} 
+                    onClick={toggle} 
+                />
+                {isOpen && <p>{content}</p>}
+            </div>
         </div>
     );
 }
