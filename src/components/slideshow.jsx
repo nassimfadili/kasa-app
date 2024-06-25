@@ -17,17 +17,17 @@ const Slideshow = ({ pictures }) => {
         setCurrentIndex(newIndex);
     };
 
-    if (pictures.length === 0) {
+    if (!pictures || pictures.length === 0) {
         return <div>No pictures found</div>;
     }
 
     return (
         <div className="slideshow">
-            <button onClick={goToPrevious} aria-label="Previous slide">
+            <button onClick={goToPrevious} aria-label="Previous slide" className="slideshow-button">
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} />
-            <button onClick={goToNext} aria-label="Next slide">
+            <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} className="slideshow-image" />
+            <button onClick={goToNext} aria-label="Next slide" className="slideshow-button">
                 <FontAwesomeIcon icon={faChevronRight} />
             </button>
         </div>
