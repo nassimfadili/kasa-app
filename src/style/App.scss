@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body {
-    padding: 50px;
-}
 
 .BannerBar {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 43px;
+    flex-shrink: 0;
 
     img {
         width: 100%;
@@ -20,14 +19,16 @@ body {
         filter: brightness(50%);
     }
 
-    P {
+    p {
         font-family: "Montserrat", sans-serif;
         font-weight: 700;
-        font-size: 3em;
+        font-size: 48px;
+        font-style: normal;
         position: absolute;
         color: white;
         z-index: 1;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: #000;
 
     }
 }
@@ -38,8 +39,8 @@ body {
     background-color: black;
     flex-direction: column;
     align-items: center; /* Centre les éléments horizontalement et verticalement */
-    padding-top: 40px;
-    padding-bottom: 15px;
+    padding-top: 66px;
+    padding-bottom: 29px;
 
     img {
       max-width: 100%; /* Assure que l'image ne dépasse pas sa taille d'origine */
@@ -49,10 +50,13 @@ body {
 
     p {
         font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
         color: white;
         text-align: center; /* Centre le texte horizontalement */
         margin: 0;
-        padding-top: 30px;
+        padding-top: 24px;
     }
 }
 
@@ -62,28 +66,48 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
 
-    li {
+    ul {
         display: flex;
         flex-direction: row;
+        gap: 57px;
+        
+        li {
+          display: flex;
+          flex-direction: row;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+        }
     } 
 
 }
 
-$gap: 100px;
-
 .CardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $gap;
-    justify-content: space-between; // Pour aligner 3 cartes par ligne (si possible)
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-radius: 25px;
+
+    a.link {
+    }
 
 }
 
 .Card {
-    width: calc((100% - 2*$gap) / 3); // Calcule la largeur pour 3 cartes par ligne avec espace entre elles
-    position: relative;
+  padding-bottom: 56px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 43px;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
     img {
         display: block;
