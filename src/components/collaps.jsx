@@ -11,14 +11,14 @@ const Collaps = ({ title, content }) => {
 
     return (
         <div className="Accordion">
-            <div>
+            <div className='AccordionContent'>
                 <h2>{title}</h2>
                 <FontAwesomeIcon 
                     icon={isOpen ? faChevronDown : faChevronUp} 
                     onClick={toggle} 
                 />
-                {isOpen && <p>{content}</p>}
-            </div>
+                </div>
+                {isOpen && <p className='AccordionText'>{content}</p>}
         </div>
     );
 }

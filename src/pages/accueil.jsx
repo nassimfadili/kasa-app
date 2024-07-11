@@ -13,6 +13,7 @@ const Accueil = () => {
       <Header />
       <Banner image={Image1} text="Chez vous, partout et ailleurs" />
       <div className="CardsContainer">
+        <div className="Cards">
         {data.map(item => (
           <Link key={item.id} to={`/logement/${item.id}`}>
             <Card
@@ -21,6 +22,7 @@ const Accueil = () => {
             />
           </Link>
         ))}
+        </div>
       </div>
       <Footer />
     </div>

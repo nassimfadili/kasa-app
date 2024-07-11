@@ -18,15 +18,17 @@ const Logement = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="Logement">
         <Slideshow pictures={logement.pictures} />
         <Appart
           title={logement.title}
           name={logement.host.name}
           picture={logement.host.picture}
           location={logement.location}
-          tag={logement.tags.join(', ')} // Joining tags with a comma
+          tag={logement.tags}
+          rating={logement.rating}
         />
+        <div className="LogementAccordeon">
         <Collaps
           title={'Description'}
           content={logement.description}
@@ -35,6 +37,7 @@ const Logement = () => {
           title={'Equipements'}
           content={logement.equipments.join(', ')} // Joining equipments with a comma
         />
+        </div>
       </div>
       <Footer />
     </div>

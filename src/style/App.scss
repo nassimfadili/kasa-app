@@ -88,26 +88,25 @@
 }
 
 .CardsContainer {
-    padding-bottom: 50px;
-    padding-right: 50px;
     padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
     border-radius: 25px;
-
-    a.link {
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
 
 }
 
 .Card {
-  padding-bottom: 56px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 43px;
+
   width: 340px;
   height: 340px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  position: relative;
 
     img {
         display: block;
@@ -115,6 +114,7 @@
         height: 100%;
         object-fit: cover; // Pour que l'image couvre la carte sans se déformer
         border-radius: 8px; // Bordure arrondie si nécessaire
+        object-fit: cover;
     }
 
 
@@ -122,23 +122,51 @@
         position: absolute;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        bottom: 0;
-        left: 0;
-        padding: 10px; // Ajustez selon vos besoins
         color: white;
         font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
         border-bottom-left-radius: 8px; // Bordure arrondie bas-gauche
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        bottom: 10px;
+        left: 10px;
+        margin:0;
+        word-wrap: break-word;
+        width: 50%;
+        padding: 10px;
     }
     
 }
 
-.Accordion {
+.Cards {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+    border-radius:  25px;
+    background: #F6F6F6;
+    padding-top: 56px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 43px;
+
+}
+
+.AccordionContent {
+    display: flex;
+    flex-direction:row;
     align-items: center;
-    gap: 30px;
-    padding-bottom: 38px;
+    justify-content:space-between ;
+    background-color: #FF6060;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+
 
     div {
         display: flex;
@@ -147,23 +175,29 @@
         width: 1000px;
     }
 
-    h2 {
-        background-color:#FF6060 ;
-        margin: 0;
-        width: 1250px;
 
-    }
 
     svg {
         z-index: 1;
         margin-left: 10px;
     }
 
+    h2 {
+      margin: 0;
+    }
+    
+
 }
 
-// Carousel //
+.AccordionText {
 
-.carousel {
+    padding: 20px;
+    border-radius: 10px 10px 5px 5px;
+    background: var(--Gray, rgba(246, 246, 246, 0.45));
+
+}
+
+.slideshow {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -181,11 +215,13 @@
         opacity: 1;
         transition: opacity 0.5s ease-in-out;
       }
-  
-      img {
-        width: 100%;
-        display: block;
-      }
+    }
+    img {
+      width: 100%;
+      height: 800px;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 25px;
     }
   
     button {
@@ -212,3 +248,177 @@
     }
   }
   
+.info-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleUser {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  h2 {
+    margin: 0;
+    color: #FF6060;
+    font-family: Montserrat;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
+.NamePicture {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+
+  p{
+  color: #FF6060;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0;
+  }
+}
+
+.userPicture {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+
+}
+
+.Logement {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+}
+.LogementAccordeon {
+  display: flex;
+  flex-direction: row;
+  gap: 76px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Layout404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 139px;
+
+  h1 {
+    color: #FF6060;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 288px;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0;
+    padding-top: 139px;
+  }
+}
+
+.PageUnfound {
+  color: #FF6060;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.PageReturn {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-align: center;
+  padding-bottom: 139px;
+  margin: 0;
+}
+
+.Accordion {
+  width: 100%;
+}
+
+.location {
+  p {
+    margin: 0;
+    color: #000;
+    font-family: Montserrat;
+      font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding-top: 2px;
+    padding-bottom: 30px;
+  }
+}
+
+.tagStar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+
+  .stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding-bottom: 30px;
+  }
+
+  .TagContent {
+    display: flex;
+    flex: row;
+    gap: 5px;
+    padding-bottom: 30px;
+    p{
+      display: flex;
+      margin: 0;
+      width: 115px;
+      height: 25px;
+      flex-shrink: 0;
+      justify-content: center;
+      background-color: #FF6060;
+      border-radius: 10px;
+      color: #FFF;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+
+    }
+  }
+}
+
+.stars .fa-star {
+  font-size: 30px;
+  color: #E3E3E3; /* Couleur des étoiles non remplies */
+}
+
+.stars .fa-star.filled {
+  color: #FF6060; /* Couleur des étoiles remplies */
+}
+
+.AboutAccordion {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 38px;
+  align-items: center;
+  .Accordion {
+    width: 70%;
+  }
+}

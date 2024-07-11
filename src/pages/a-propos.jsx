@@ -10,11 +10,12 @@ const Apropos = () => {
     return <div>
     <Header/>
     <Banner image={Image1}/>
+    <div className="AboutAccordion">
     {data.map(item => (
        <Collaps
        title={item.title}
        content={item.description}/> 
-    ))}
+    ))}</div>
     <Footer/>
     </div>
 }
