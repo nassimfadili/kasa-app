@@ -1,4 +1,4 @@
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 
@@ -11,14 +11,16 @@ const Collaps = ({ title, content }) => {
 
     return (
         <div className="Accordion">
-            <div className='AccordionContent'>
+            <div className='AccordionContent' onClick={toggle}>
                 <h2>{title}</h2>
                 <FontAwesomeIcon 
-                    icon={isOpen ? faChevronDown : faChevronUp} 
-                    onClick={toggle} 
+                    icon={faChevronUp} 
+                    className={`chevron ${isOpen ? 'rotate' : ''}`}
                 />
-                </div>
-                {isOpen && <p className='AccordionText'>{content}</p>}
+            </div>
+            <div className={`AccordionText ${isOpen ? 'open' : ''}`}>
+                <p>{content}</p>
+            </div>
         </div>
     );
 }

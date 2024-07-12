@@ -1,424 +1,471 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+// Variables
+$primary-color: #ff6060;
+$secondary-color: #f6f6f6;
+$text-color: #fff;
+$font-family: "Montserrat", sans-serif;
+$border-radius: 10px;
 
-.BannerBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 43px;
-    flex-shrink: 0;
-
-    img {
-        width: 100%;
-        height: 223px;
-        overflow: hidden;
-        object-fit: cover;
-        border-radius: 20px;
-        filter: brightness(50%);
-    }
-
-    p {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-        font-size: 48px;
-        font-style: normal;
-        position: absolute;
-        color: white;
-        z-index: 1;
-        -webkit-text-stroke-width: 1;
-        -webkit-text-stroke-color: #000;
-
-    }
-}
-
-.footerbar {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    flex-direction: column;
-    align-items: center; /* Centre les éléments horizontalement et verticalement */
-    padding-top: 66px;
-    padding-bottom: 29px;
-
-    img {
-      max-width: 100%; /* Assure que l'image ne dépasse pas sa taille d'origine */
-      height: auto; /* Maintient le ratio hauteur/largeur de l'image */
-      /* background-color: white; */ /* Ce commentaire est incorrect, ne s'applique pas à une image */
-    }
-
-    p {
-        font-family: "Montserrat", sans-serif;
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 500;
-        color: white;
-        text-align: center; /* Centre le texte horizontalement */
-        margin: 0;
-        padding-top: 24px;
-    }
-}
-
-.Navbar {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 45px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    padding-right: 50px;
-
-    ul {
-        display: flex;
-        flex-direction: row;
-        gap: 57px;
-        
-        li {
-          display: flex;
-          flex-direction: row;
-          font-size: 24px;
-          font-style: normal;
-          font-weight: 500;
-        }
-    } 
-
-}
-
-.CardsContainer {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    border-radius: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-
-}
-
-.Card {
-
-  width: 340px;
-  height: 340px;
+// Mixins
+@mixin flex-center {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  position: relative;
-
-    img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; // Pour que l'image couvre la carte sans se déformer
-        border-radius: 8px; // Bordure arrondie si nécessaire
-        object-fit: cover;
-    }
-
-
-    p {
-        position: absolute;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 700;
-        color: white;
-        font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
-        border-bottom-left-radius: 8px; // Bordure arrondie bas-gauche
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        bottom: 10px;
-        left: 10px;
-        margin:0;
-        word-wrap: break-word;
-        width: 50%;
-        padding: 10px;
-    }
-    
+  justify-content: center;
+  align-items: center;
 }
 
-.Cards {
+@mixin montserrat-font($size, $weight) {
+  font-family: $font-family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  color: $primary-color;
+}
+
+// Header
+.Navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  img {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 60px;
-    border-radius:  25px;
-    background: #F6F6F6;
-    padding-top: 56px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 43px;
+    gap: 20px;
 
-}
-
-.AccordionContent {
-    display: flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content:space-between ;
-    background-color: #FF6060;
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 10px;
-
-
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 1000px;
-    }
-
-
-
-    svg {
-        z-index: 1;
-        margin-left: 10px;
-    }
-
-    h2 {
-      margin: 0;
-    }
-    
-
-}
-
-.AccordionText {
-
-    padding: 20px;
-    border-radius: 10px 10px 5px 5px;
-    background: var(--Gray, rgba(246, 246, 246, 0.45));
-
-}
-
-.slideshow {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  
-    &-slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-  
-    &-slide {
-      min-width: 100%;
-      transition: opacity 0.5s ease-in-out;
-  
-      &.active {
-        opacity: 1;
-        transition: opacity 0.5s ease-in-out;
-      }
-    }
-    img {
-      width: 100%;
-      height: 800px;
-      flex-shrink: 0;
-      object-fit: cover;
-      border-radius: 25px;
-    }
-  
-    button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 10px;
+    li {
       cursor: pointer;
-  
-      &:focus {
-        outline: none;
-      }
-  
-      &:first-of-type {
-        left: 10px;
-      }
-  
-      &:last-of-type {
-        right: 10px;
+      @include montserrat-font(14px, 500);
+      color: #000000;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
-  
+}
+
+// Banner
+.BannerBar {
+  position: relative;
+  margin: 0 20px;
+
+  img {
+    width: 100%;
+    height: 223px;
+    object-fit: cover;
+    border-radius: $border-radius;
+    filter: brightness(30%);
+  }
+
+  p {
+    @include montserrat-font(24px, 700);
+    color: $text-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// Cards
+.CardsContainer {
+  margin: 20px;
+}
+
+.Cards {
+  display: grid;
+  gap: 20px;
+  background-color: $secondary-color;
+  border-radius: $border-radius;
+  padding: 20px;
+}
+
+.Card {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  p {
+    @include montserrat-font(16px, 700);
+    color: $text-color;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+// Accordion
+.Accordion {
+  margin-bottom: 20px;
+  overflow: hidden; // Pour cacher le contenu qui dépasse
+
+  .AccordionContent {
+    @include flex-center;
+    justify-content: space-between;
+    background-color: $primary-color;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    color: $text-color;
+    cursor: pointer;
+
+    h2 {
+      @include montserrat-font(16px, 700);
+    }
+
+    .chevron {
+      transition: transform 0.4s ease;
+
+      &.rotate {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .AccordionText {
+    background-color: $secondary-color;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    p {
+      @include montserrat-font(14px, 400);
+      color: black;
+      padding: 20px 0;
+    }
+
+    &.open {
+      max-height: 1000px; // Une valeur suffisamment grande pour contenir le contenu
+      padding: 15px 20px;
+    }
+  }
+}
+
+// Logement
+.Logement {
+  margin: 20px;
+}
+
 .info-content {
-  display: flex;
-  flex-direction: column;
+  margin-top: 20px;
 }
 
 .titleUser {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items:center;
   h2 {
-    margin: 0;
-    color: #FF6060;
-    font-family: Montserrat;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 500;
+    @include montserrat-font(20px, 500);
   }
 }
 
 .NamePicture {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   gap: 10px;
-  align-items: center;
-  margin-top: 20px;
 
-  p{
-  color: #FF6060;
-  text-align: right;
-  font-family: Montserrat;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  margin: 0;
-  }
-}
-
-.userPicture {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-
-}
-
-.Logement {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 50px;
-}
-.LogementAccordeon {
-  display: flex;
-  flex-direction: row;
-  gap: 76px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.Layout404 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 139px;
-
-  h1 {
-    color: #FF6060;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 288px;
-    font-style: normal;
-    font-weight: 700;
-    margin: 0;
-    padding-top: 139px;
-  }
-}
-
-.PageUnfound {
-  color: #FF6060;
-  font-family: Montserrat;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 500;
-  text-align: center;
-  margin: 0;
-}
-
-.PageReturn {
-  color: #000;
-  font-family: Montserrat;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 500;
-  text-decoration-line: underline;
-  text-align: center;
-  padding-bottom: 139px;
-  margin: 0;
-}
-
-.Accordion {
-  width: 100%;
-}
-
-.location {
   p {
-    margin: 0;
-    color: #000;
-    font-family: Montserrat;
-      font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    padding-top: 2px;
-    padding-bottom: 30px;
+    @include montserrat-font(14px, 500);
+    color: $primary-color;
   }
+
+  .userPicture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.location p {
+  @include montserrat-font(18px, 500);
+  margin-top: 5px;
+  color: black;
 }
 
 .tagStar {
+  margin-top: 20px;
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-  .stars {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-    padding-bottom: 30px;
+.TagContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  p {
+    @include montserrat-font(12px, 700);
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 5px 25px;
+    border-radius: 10px;
   }
+}
 
-  .TagContent {
-    display: flex;
-    flex: row;
-    gap: 5px;
-    padding-bottom: 30px;
-    p{
-      display: flex;
-      margin: 0;
-      width: 115px;
-      height: 25px;
-      flex-shrink: 0;
-      justify-content: center;
-      background-color: #FF6060;
-      border-radius: 10px;
-      color: #FFF;
-      font-family: Montserrat;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
+.stars {
+  display: flex;
+  gap: 10px;
+  .fa-star {
+    font-size: 30px;
+    color: #e3e3e3;
 
+    &.filled {
+      color: $primary-color;
     }
   }
 }
 
-.stars .fa-star {
-  font-size: 30px;
-  color: #E3E3E3; /* Couleur des étoiles non remplies */
+// Slideshow
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 415px;
+
+  img {
+    width: 100%;
+    height: 415px;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $text-color;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:first-of-type {
+      left: 10px;
+    }
+
+    &:last-of-type {
+      right: 10px;
+    }
+  }
 }
 
-.stars .fa-star.filled {
-  color: #FF6060; /* Couleur des étoiles remplies */
+// 404 Page
+.Layout404 {
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    @include montserrat-font(96px, 700);
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  .PageUnfound {
+    @include montserrat-font(18px, 500);
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  .PageReturn {
+    @include montserrat-font(14px, 500);
+    text-decoration: underline;
+    cursor: pointer;
+    color: $primary-color;
+  }
+}
+
+// Footer
+.footerbar {
+  background-color: black;
+  color: $text-color;
+  text-align: center;
+  padding: 20px;
+
+  img {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    @include montserrat-font(12px, 500);
+  }
+}
+
+// Media queries for larger screens
+@media (min-width: 768px) {
+  .Navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 50px;
+
+    img {
+      max-width: 150px;
+      margin-bottom: 0;
+    }
+
+    ul li {
+      font-size: 24px;
+    }
+  }
+
+  .BannerBar {
+    margin: 0 50px;
+
+    img {
+      height: 220px;
+    }
+
+    p {
+      font-size: 48px;
+    }
+  }
+
+  .CardsContainer {
+    margin: 50px;
+  }
+
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 56px 50px 43px;
+  }
+
+  .Card {
+    height: 340px;
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .Logement {
+    margin: 50px;
+  }
+
+  .titleUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 36px;
+    }
+  }
+
+  .tagStar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .slideshow {
+    height: 415px;
+  }
+
+  .Layout404 {
+    h1 {
+      font-size: 288px;
+    }
+
+    .PageUnfound {
+      font-size: 36px;
+    }
+
+    .PageReturn {
+      font-size: 18px;
+    }
+  }
+
+  .footerbar {
+    padding: 40px;
+
+    img {
+      max-width: 150px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .Cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .LogementAccordeon {
+    display: flex;
+    gap: 76px;
+
+    .Accordion {
+      flex: 1;
+    }
+  }
 }
 
 .AboutAccordion {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-bottom: 38px;
   align-items: center;
+  padding: 20px;
+
   .Accordion {
-    width: 70%;
+    width: 100%;
+    max-width: 1023px; // Pour s'assurer qu'il ne dépasse pas sur les très grands écrans
+    margin-bottom: 20px;
+  }
+}
+
+// Media query pour les écrans moyens et grands
+@media (min-width: 768px) {
+  .apropos-page {
+    .AboutAccordion {
+      padding: 40px 20px;
+
+      .Accordion {
+        width: 70%;
+      }
+    }
+  }
+}
+
+// Media query pour les grands écrans
+@media (min-width: 1024px) {
+  .apropos-page {
+    .AboutAccordion {
+      padding: 40px 20px;
+
+      .Accordion {
+        width: 70%;
+      }
+    }
   }
 }
