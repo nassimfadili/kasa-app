@@ -187,6 +187,19 @@ main {
 .Logement {
   margin: 20px;
 }
+.LogementContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.StarsAndName {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
 .info-content {
   margin-top: 20px;
