@@ -126,7 +126,7 @@ body {
 // Accordion
 .Accordion {
   margin-bottom: 20px;
-  overflow: hidden; // Pour cacher le contenu qui dépasse
+  overflow: hidden;
 
   .AccordionContent {
     @include flex-center;
@@ -164,7 +164,7 @@ body {
     }
 
     &.open {
-      max-height: 1000px; // Une valeur suffisamment grande pour contenir le contenu
+      max-height: 1000px;
       padding: 15px 20px;
     }
   }
@@ -439,7 +439,7 @@ body {
 
   .Accordion {
     width: 100%;
-    max-width: 1023px; // Pour s'assurer qu'il ne dépasse pas sur les très grands écrans
+    max-width: 1023px;
     margin-bottom: 20px;
   }
 }
