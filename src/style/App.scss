@@ -34,15 +34,15 @@ $border-radius: 10px;
 body {
   font-family: $font-family;
   color: $primary-color;
-  min-height: 100vh; // Changez height en min-height
-  display: flex; // Ajoutez cette ligne
-  flex-direction: column; // Ajoutez cette ligne
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 }
 
 main {
-  flex: 1; // Gardez cette ligne
+  flex: 1;
 }
 
 // Header
@@ -247,7 +247,6 @@ main {
 .tagStar {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -364,6 +363,47 @@ main {
 
   p {
     @include montserrat-font(12px, 500);
+  }
+}
+
+// Media query for mobile devices
+@media (max-width: 767px) {
+  .LogementContent {
+    flex-direction: column;
+  }
+
+  .info-content {
+    order: 1;
+  }
+
+  .StarsAndName {
+    order: 2;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .TagContent {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .TagContent p {
+    margin-bottom: 10px;
+  }
+
+  .stars {
+    order: 2;
+    font-size: 15px;
+  }
+
+  .NamePicture {
+    order: 1;
+  }
+
+  .LogementAccordeon {
+    flex-direction: column;
   }
 }
 
@@ -499,7 +539,7 @@ main {
   }
 }
 
-// Media query pour les écrans moyens et grands
+// Media query for medium and large screens
 @media (min-width: 768px) {
   .apropos-page {
     .AboutAccordion {
@@ -517,7 +557,7 @@ main {
   }
 }
 
-// Media query pour les grands écrans
+// Media query for large screens
 @media (min-width: 1024px) {
   .apropos-page {
     .AboutAccordion {
