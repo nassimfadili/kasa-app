@@ -21,6 +21,10 @@ $border-radius: 10px;
 }
 
 // Reset
+#root {
+  min-height: 100vh;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,12 +34,21 @@ $border-radius: 10px;
 body {
   font-family: $font-family;
   color: $primary-color;
+  min-height: 100vh; // Changez height en min-height
+  display: flex; // Ajoutez cette ligne
+  flex-direction: column; // Ajoutez cette ligne
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1; // Gardez cette ligne
 }
 
 // Header
 .Navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
 
@@ -177,6 +190,8 @@ body {
 
 .info-content {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .titleUser {
@@ -185,9 +200,16 @@ body {
   }
 }
 
+.UserStar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
 .NamePicture {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
 
   p {
@@ -220,6 +242,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  align-self: flex-end;
 
   p {
     @include montserrat-font(12px, 700);
@@ -274,6 +297,18 @@ body {
       right: 10px;
     }
   }
+
+  &-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $text-color;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+  }
 }
 
 // 404 Page
@@ -307,6 +342,7 @@ body {
   color: $text-color;
   text-align: center;
   padding: 20px;
+  margin-top: auto;
 
   img {
     max-width: 100px;
@@ -429,6 +465,12 @@ body {
       flex: 1;
     }
   }
+
+  .titleUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .AboutAccordion {
@@ -455,6 +497,11 @@ body {
       }
     }
   }
+  .titleUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 // Media query pour les grands écrans
@@ -467,5 +514,10 @@ body {
         width: 70%;
       }
     }
+  }
+  .titleUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

@@ -26,10 +26,13 @@ const Slideshow = ({ pictures }) => {
             <button onClick={goToPrevious} aria-label="Previous slide" className="slideshow-button">
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
-            <img src={pictures[currentIndex]} alt={`Slide ${currentIndex}`} className="slideshow-image" />
+            <img src={pictures[currentIndex]} alt={`Slide ${currentIndex + 1}`} className="slideshow-image" />
             <button onClick={goToNext} aria-label="Next slide" className="slideshow-button">
                 <FontAwesomeIcon icon={faChevronRight} />
             </button>
+            <div className="slideshow-counter">
+                {currentIndex + 1}/{pictures.length}
+            </div>
         </div>
     );
 };
