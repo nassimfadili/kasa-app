@@ -20,32 +20,30 @@ $border-radius: 10px;
   font-weight: $weight;
 }
 
-// Reset
+// Reset and Global Styles
 #root {
-  min-height: 100vh;
+  min-height: auto;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: $font-family;
+  @include montserrat-font(16px, 400);
   color: $primary-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: 0;
 }
 
 main {
   flex: 1;
 }
 
-// Header
+// Components
 .Navbar {
   display: flex;
   justify-content: space-between;
@@ -67,14 +65,13 @@ main {
       @include montserrat-font(14px, 500);
       color: #000000;
 
-      &:hover {
+      &.active {
         text-decoration: underline;
       }
     }
   }
 }
 
-// Banner
 .BannerBar {
   position: relative;
   margin: 0 20px;
@@ -99,7 +96,6 @@ main {
   }
 }
 
-// Cards
 .CardsContainer {
   margin: 20px;
 }
@@ -136,7 +132,6 @@ main {
   }
 }
 
-// Accordion
 .Accordion {
   margin-bottom: 20px;
   overflow: hidden;
@@ -156,7 +151,6 @@ main {
 
     .chevron {
       transition: transform 0.4s ease;
-
       &.rotate {
         transform: rotate(-180deg);
       }
@@ -183,102 +177,98 @@ main {
   }
 }
 
-// Logement
 .Logement {
   margin: 20px;
-}
-.LogementContent {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
 
-.StarsAndName {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  .LogementContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
 
-.info-content {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-}
+  .StarsAndName {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
 
-.titleUser {
-  h2 {
+  .info-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleUser h2 {
     @include montserrat-font(20px, 500);
   }
-}
 
-.UserStar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 10px;
-}
-.NamePicture {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-
-  p {
-    @include montserrat-font(14px, 500);
-    color: $primary-color;
+  .UserStar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
   }
 
-  .userPicture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-}
+  .NamePicture {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 
-.location p {
-  @include montserrat-font(18px, 500);
-  margin-top: 5px;
-  color: black;
-}
-
-.tagStar {
-  margin-top: 20px;
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.TagContent {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-self: flex-end;
-
-  p {
-    @include montserrat-font(12px, 700);
-    background-color: $primary-color;
-    color: $text-color;
-    padding: 5px 25px;
-    border-radius: 10px;
-  }
-}
-
-.stars {
-  display: flex;
-  gap: 10px;
-  .fa-star {
-    font-size: 30px;
-    color: #e3e3e3;
-
-    &.filled {
+    p {
+      @include montserrat-font(14px, 500);
       color: $primary-color;
+    }
+
+    .userPicture {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .location p {
+    @include montserrat-font(18px, 500);
+    margin-top: 5px;
+    color: black;
+  }
+
+  .tagStar {
+    display: flex;
+  }
+
+  .TagContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-self: flex-end;
+
+    p {
+      @include montserrat-font(12px, 700);
+      background-color: $primary-color;
+      color: $text-color;
+      padding: 5px 25px;
+      border-radius: 10px;
+    }
+  }
+
+  .stars {
+    display: flex;
+    gap: 10px;
+    .fa-star {
+      font-size: 30px;
+      color: #e3e3e3;
+      &.filled {
+        color: $primary-color;
+      }
     }
   }
 }
 
-// Slideshow
 .slideshow {
   position: relative;
   width: 100%;
@@ -304,7 +294,6 @@ main {
     &:first-of-type {
       left: 10px;
     }
-
     &:last-of-type {
       right: 10px;
     }
@@ -323,13 +312,17 @@ main {
   }
 }
 
-// 404 Page
 .Layout404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 20px;
+  min-height: 76vh;
 
   h1 {
     @include montserrat-font(96px, 700);
+    margin-top: 0;
     margin-bottom: 20px;
     color: $primary-color;
   }
@@ -344,11 +337,10 @@ main {
     @include montserrat-font(14px, 500);
     text-decoration: underline;
     cursor: pointer;
-    color: $primary-color;
+    color: black;
   }
 }
 
-// Footer
 .footerbar {
   background-color: black;
   color: $text-color;
@@ -366,14 +358,37 @@ main {
   }
 }
 
-// Media query for mobile devices
+.AboutAccordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 57vh;
+
+  .Accordion {
+    width: 100%;
+    max-width: 1023px;
+    margin-bottom: 20px;
+  }
+}
+
+// Media Queries
 @media (max-width: 767px) {
+  .Navbar ul li {
+    text-transform: uppercase;
+  }
+
   .LogementContent {
     flex-direction: column;
   }
 
   .info-content {
     order: 1;
+  }
+
+  .stars .fa-star {
+    font-size: 18px;
   }
 
   .StarsAndName {
@@ -387,10 +402,9 @@ main {
   .TagContent {
     justify-content: flex-start;
     margin-top: 10px;
-  }
-
-  .TagContent p {
-    margin-bottom: 10px;
+    p {
+      margin-bottom: 10px;
+    }
   }
 
   .stars {
@@ -405,9 +419,12 @@ main {
   .LogementAccordeon {
     flex-direction: column;
   }
+
+  .slideshow-counter {
+    display: none;
+  }
 }
 
-// Media queries for larger screens
 @media (min-width: 768px) {
   .Navbar {
     flex-direction: row;
@@ -426,11 +443,9 @@ main {
 
   .BannerBar {
     margin: 0 50px;
-
     img {
       height: 220px;
     }
-
     p {
       font-size: 48px;
     }
@@ -448,7 +463,6 @@ main {
 
   .Card {
     height: 340px;
-
     p {
       font-size: 18px;
     }
@@ -456,13 +470,13 @@ main {
 
   .Logement {
     margin: 50px;
+    min-height: 67vh;
   }
 
   .titleUser {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     h2 {
       font-size: 36px;
     }
@@ -478,11 +492,9 @@ main {
     h1 {
       font-size: 288px;
     }
-
     .PageUnfound {
       font-size: 36px;
     }
-
     .PageReturn {
       font-size: 18px;
     }
@@ -490,14 +502,25 @@ main {
 
   .footerbar {
     padding: 40px;
-
     img {
       max-width: 150px;
     }
-
     p {
       font-size: 24px;
     }
+  }
+
+  .apropos-page .AboutAccordion {
+    padding: 40px 20px;
+    .Accordion {
+      width: 70%;
+    }
+  }
+
+  .titleUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -509,7 +532,6 @@ main {
   .LogementAccordeon {
     display: flex;
     gap: 76px;
-
     .Accordion {
       flex: 1;
     }
@@ -520,53 +542,11 @@ main {
     flex-direction: row;
     justify-content: space-between;
   }
-}
 
-.AboutAccordion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-
-  .Accordion {
-    width: 100%;
-    max-width: 1023px;
-    margin-bottom: 20px;
-  }
-}
-
-// Media query for medium and large screens
-@media (min-width: 768px) {
-  .apropos-page {
-    .AboutAccordion {
-      padding: 40px 20px;
-
-      .Accordion {
-        width: 70%;
-      }
+  .apropos-page .AboutAccordion {
+    padding: 40px 20px;
+    .Accordion {
+      width: 70%;
     }
-  }
-  .titleUser {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-// Media query for large screens
-@media (min-width: 1024px) {
-  .apropos-page {
-    .AboutAccordion {
-      padding: 40px 20px;
-
-      .Accordion {
-        width: 70%;
-      }
-    }
-  }
-  .titleUser {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 }

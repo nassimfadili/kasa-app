@@ -20,30 +20,38 @@ const Slideshow = ({ pictures }) => {
     setCurrentIndex(newIndex);
   };
 
+  const showControls = pictures.length > 1;
+
   return (
     <div className="slideshow">
-      <button
-        onClick={goToPrevious}
-        aria-label="Previous slide"
-        className="slideshow-button"
-      >
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </button>
+      {showControls && (
+        <>
+          <button
+            onClick={goToPrevious}
+            aria-label="Previous slide"
+            className="slideshow-button"
+          >
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <button
+            onClick={goToNext}
+            aria-label="Next slide"
+            className="slideshow-button"
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </>
+      )}
       <img
         src={pictures[currentIndex]}
         alt={`Slide ${currentIndex + 1}`}
         className="slideshow-image"
       />
-      <button
-        onClick={goToNext}
-        aria-label="Next slide"
-        className="slideshow-button"
-      >
-        <FontAwesomeIcon icon={faChevronRight} />
-      </button>
-      <div className="slideshow-counter">
-        {currentIndex + 1}/{pictures.length}
-      </div>
+      {showControls && (
+        <div className="slideshow-counter">
+          {currentIndex + 1}/{pictures.length}
+        </div>
+      )}
     </div>
   );
 };
